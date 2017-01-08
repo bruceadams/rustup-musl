@@ -12,5 +12,5 @@ docker run --interactive \
            --volume $HOME/.cargo/registry:/home/rust/.cargo/registry \
            --volume $PWD:$PWD \
            --workdir $PWD \
-           bruceadams/rustup-musl \
+           bruceadams/rustup-musl:clang \
            "$@"
