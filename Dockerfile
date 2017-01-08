@@ -1,12 +1,9 @@
 FROM ubuntu
 
 RUN apt-get update && \
-    apt-get install -y clang curl file make musl-dev && \
+    apt-get install -y build-essential curl file make musl-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-# The build for the ring crate demands g++
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/clang++ 1
 
 RUN useradd --create-home rust
 USER rust
