@@ -15,7 +15,7 @@ ENV HOME=/home/rust
 # Set up our path to include our Rust toolchain
 ENV PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-RUN curl -sSf https://sh.rustup.rs | sh -s -- -y
+RUN curl -sSf https://sh.rustup.rs | sh -s -- --default-toolchain beta -y
 RUN rustup target add x86_64-unknown-linux-musl
 
 # The container will be run with an arbitrary UID.
